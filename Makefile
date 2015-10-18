@@ -20,7 +20,7 @@ all: $(TARGET).velf
 
 %.velf: %.elf
 	$(PREFIX)-strip -g $<
-	vita-elf-create $< $@ $(VITASDK)/bin/db.json
+	vita-elf-create $< $@
 
 $(TARGET).elf: $(OBJS)
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $@

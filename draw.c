@@ -66,13 +66,13 @@ void init_video()
 	/* Setup framebuffers */
 	fb[0].size        = sizeof(fb[0]);
 	fb[0].pitch       = SCREEN_W;
-	fb[0].pixelformat = PSP2_DISPLAY_PIXELFORMAT_A8B8G8R8;
+	fb[0].pixelformat = SCE_DISPLAY_PIXELFORMAT_A8B8G8R8;
 	fb[0].width       = SCREEN_W;
 	fb[0].height      = SCREEN_H;
 
 	fb[1].size        = sizeof(fb[1]);
 	fb[1].pitch       = SCREEN_W;
-	fb[1].pixelformat = PSP2_DISPLAY_PIXELFORMAT_A8B8G8R8;
+	fb[1].pixelformat = SCE_DISPLAY_PIXELFORMAT_A8B8G8R8;
 	fb[1].width       = SCREEN_W;
 	fb[1].height      = SCREEN_H;
 
@@ -129,7 +129,7 @@ void end_video()
 
 void swap_buffers()
 {
-	sceDisplaySetFrameBuf(&fb[cur_fb], PSP2_DISPLAY_SETBUF_NEXTFRAME);
+	sceDisplaySetFrameBuf(&fb[cur_fb], SCE_DISPLAY_SETBUF_NEXTFRAME);
 	cur_fb ^= 1;
 }
 
